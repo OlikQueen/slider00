@@ -1,0 +1,20 @@
+{
+  "name": "slider00",
+  "private": false,
+  "version": "0.1.8",
+  "type": "module",
+  "files": [
+    "dist/*"
+  ],
+  "main": "./dist/slider00.js",
+  "module": "./dist/slider00.umd.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.70.0",
+    "vite": "^5.0.8"
+  }
+}
