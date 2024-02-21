@@ -2,13 +2,26 @@
 
 - вывести точки
 - активная точка
-- data-dotted если есть этот атрибут, то выводим, по умолчанию нет
+дз - data-dotted если есть этот атрибут, то выводим, по умолчанию нет
 
 */
 
 const classes = {
   root: "slider",
   mod: "active"
+}
+
+function dots(slider){  
+  const dots = document.createElement('div');
+  dots.setAttribute('class','slider__dots');
+
+  const sliderImg = slider.querySelectorAll('[data-item]');
+  for (const iterator of sliderImg) {
+    const dot = document.createElement('a');
+    dots.appendChild(dot);
+  }
+  
+  slider.appendChild(dots);
 }
 
 
@@ -33,12 +46,13 @@ function sliderRun(slider) {
       switcing = 0;
     };
   }, timeout);
+
+  dots(slider);
 };
 
 
 export const slider = () => {
     const sliders = document.querySelectorAll(`.${classes.root}`);
-    const sliderImg = document.querySelectorAll(`.${classes.root} [data-item]`);
 
     for ( const slider of sliders ) {
       sliderRun(slider)
