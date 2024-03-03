@@ -1,9 +1,9 @@
-// import { slider } from "./src/slider";
-// import './src/scss/style.scss';
+import { slider } from "./src/slider";
+import './src/scss/style.scss';
 
-import { callback } from "./src/callback"
-callback();
+// import { callback } from "./src/callback"
+// callback();
 
 
-// slider();
-// export default slider; // для загрузки глобально
+slider();
+export default slider; // для загрузки глобально
