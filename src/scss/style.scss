@@ -4,6 +4,7 @@
     height: 100%;
     width: 100%;
 
+
     [data-item] {
         position: absolute;
         /* Переполняющее содержимое не отображается. */
@@ -41,9 +42,9 @@
             border-radius: 50%;
 
             &.active {
-                background-color: red;
-                width: 20px;
-                height: 20px;
+                background-color: grey;
+                width: 15px;
+                height: 15px;
             }
         }
 

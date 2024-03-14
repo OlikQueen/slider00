@@ -11,7 +11,7 @@ const classes = {
 }
 
 const store = {
-  dotActive: 0
+  dotActive: "data-infinity"
 }
 
 
@@ -28,7 +28,7 @@ function dots(slider) {
   sliderItem.forEach((element, index) => {
     const dot = document.createElement('a');
 
-    if(index === 0) {
+    if (index === 0) {
       dot.classList.add(classes.mod);
     }
 
@@ -104,29 +104,31 @@ function sliderRun(slider) {
 
   // 1 хранилище индекса активного эле-та
   let switcing = 1;
-  setInterval(function () {
-    // 0 удаляем класс у всех эл-в
-    for (const iterator of sliderItem) {
-      iterator.classList.remove(classes.mod);
-    }
+  setInterval(
+    function () {
+      // 0 удаляем класс у всех эл-в
+      for (const iterator of sliderItem) {
+        iterator.classList.remove(classes.mod);
+      }
 
-    // функция, отвечающая за активность точек => slider, switcing
-    // нужно будет внутри слайдера найти картинку под индексом switcing и задать класс
-    setActiveDot(slider, switcing);
+      // функция, отвечающая за активность точек => slider, switcing
+      // нужно будет внутри слайдера найти картинку под индексом switcing и задать класс
+      setActiveDot(slider, switcing);
 
-    // 2 новому активному эл-ту добавляю класс
-    sliderItem[switcing++].classList.add(classes.mod);
+      // 2 новому активному эл-ту добавляю класс
+      sliderItem[switcing++].classList.add(classes.mod);
 
-    // 3 проверяю совпадает ли текущий эл-т с последним из списка
-    // если есть infiniti
-    if (sliderItem.length === switcing) {
-      switcing = 0;
-    };
-  }, timeout);
+      // 3 проверяю совпадает ли текущий эл-т с последним из списка 
+      // если есть infiniti
+      if (sliderItem.length === switcing) {
+        switcing = 0;
+      };
+    }, timeout
+  );
 
   if (dotted) {
     dots(slider);
-  }
+  };
 };
 
 
@@ -134,6 +136,6 @@ export const slider = () => {
   const sliders = document.querySelectorAll(`.${classes.root}`);
 
   for (const slider of sliders) {
-    sliderRun(slider)
-  }
+    sliderRun(slider);
+  };
 };
